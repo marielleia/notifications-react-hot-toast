@@ -1,11 +1,41 @@
 import "./App.css";
-import {Toaster, toast} from 'react-hot-toast';
+import { Toaster, toast } from "react-hot-toast";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <button onClick={()=>toast.success('Hello World')}>Hello World</button>
+      <h1>Toast notifications</h1>
+      <button
+        onClick={() =>
+          toast.success("Its a beautiful morning", {
+            position: "top-right",
+            autoClose: 5000,
+            icon: "☀️",
+            style: {
+              background: "white",
+              color: "orange",
+            },
+          })
+        }
+      >
+        Good morning
+      </button>
+      <button
+        onClick={() =>
+          toast.success("Sweet dreams and sleep tight", {
+            position: "bottom-right",
+            autoClose: 5000,
+            icon: "🌙",
+            style: {
+              background: "darkblue",
+              color: "#fff",
+            },
+          })
+        }
+      >
+        Good night
+      </button>
+
       <p>
         orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porttitor
         ipsum vitae augue commodo, ac euismod ipsum mollis. Aliquam dictum nisl
@@ -37,16 +67,7 @@ function App() {
         blandit augue, ac fringilla dolor metus sed lacus. Maecenas a libero vel
         mi varius lacinia non rutrum ante. Morbi ut hendrerit enim.
       </p>
-      <Toaster
-      position='top-right'
-      reverseOrder={false}
-      gutter={8}
-      toastOptions={{
-        style:{
-          background: '#363636',
-          color: '#fff',
-        }
-      }}/>
+      <Toaster />
     </div>
   );
 }
